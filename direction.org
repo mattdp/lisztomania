@@ -1,0 +1,21 @@
+* todo
+** DONE add enough to CSV that it can be tested
+** uptake CSV into hashes in python
+** output the whole thing, in emacs format, to a saved file that overwrites
+** CLI input for 1) life or life+work 2) priority
+** results using CLI
+** MVP? outfit for AM routine and use for 3 days
+* goals
+** confirmed
+*** simple command makes routine todo list for the day
+** brainstorm
+* features
+** confirmed
+*** CSV format for name/detail/priority/category (internal)
+*** red/yellow/green input, so matches panic level of day
+*** workday vs. nonworkday
+*** scriptable command to generate list in emacs format
+** icebox
+*** quote and goal randomizers as part of what's produced 
+*** eventual not just "life" and "work" but other projects
+** brainstorm
