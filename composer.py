@@ -34,6 +34,25 @@ def parse_cli(argv):
 	
 	return arguments
 
+#return T or F
+#lets things through unless reason to remove
+def row_test(row, arguments):
+	debug = True
+	if debug:
+		print(f'row: {row}')
+		print(f'args: {arguments}')
+	#don't show work stuff on weekends
+	if "day_type" in arguments and arguments["day_type"] == "weekend":
+		if row["category"] == "work":
+			return False
+	#don't show non-urgent stuff on stressful days
+	if "priority" in arguments:
+		if arguments["priority"] == "red" and (row["priority"] in ["green", "yellow"]):
+			return False
+		elif arguments["priority"] == "yellow" and (row["priority"] == "green"):
+			return False	
+	return True
+
 def main(argv):
 
 	arguments = parse_cli(argv)
@@ -44,7 +63,8 @@ def main(argv):
 	with open('./elements.csv') as csv_file:
 		csv_reader = csv.DictReader(csv_file, delimiter=',')
 		for row in csv_reader:
-			selected_rows.append(row)
+			if row_test(row, arguments) == True:
+				selected_rows.append(row)
 
 	formatted_output = emacsify(selected_rows)
 	print(formatted_output)
