@@ -1,9 +1,10 @@
 * todo
 ** DONE add enough to CSV that it can be tested
-** uptake CSV into hashes in python
-** output the whole thing, in emacs format, to a saved file that overwrites
-** CLI input for 1) life or life+work 2) priority
-** results using CLI
+** DONE uptake CSV into hashes in python
+** DONE output the whole thing, in emacs format, to terminal
+** DONE output to a saved file that overwrites
+** CLI input, but no output changes, for 1) life or life+work 2) priority
+** Output changes in results using CLI
 ** MVP? outfit for AM routine and use for 3 days
 * goals
 ** confirmed

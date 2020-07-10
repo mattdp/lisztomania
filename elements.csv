@@ -1,12 +1,12 @@
-﻿name,detail,priority,category,timing
-Did yesterday's routines?,Write down on a piece of displayed paper priority level and if did routines yesterday,red,life,morning
-Gratitude (AM),1 minute of gratitude - soaring happiness at points - for my life,red,life,morning
-Read five major goals,"Care a lot about the opinions of people I've deliberately selected by person and opinion area; care less about other opinions
+﻿dummycol,name,detail,priority,category,timing
+,Did yesterday's routines?,Write down on a piece of displayed paper priority level and if did routines yesterday,red,life,morning
+,Gratitude (AM),1 minute of gratitude - soaring happiness at points - for my life,red,life,morning
+,Read five major goals,"Care a lot about the opinions of people I've deliberately selected by person and opinion area; care less about other opinions
 Be an excellent husband and father
 Build strong friendships
 Keep learning until I die
 Find meaningful work",yellow,life,morning
-Review personal weekly goals,"Now, manually find them. TODO - include",yellow,life,morning
-Set personal daily goals,"One to three goals, added to life todos today",yellow,life,morning
-Email triage,,red,work,morning
-Set 30 minutes of personal time,,yellow,work,morning
+,Review personal weekly goals,"For now, manually lookup. TODO - include",yellow,life,morning
+,Set personal daily goals,"One to three goals, added to life todos today",yellow,life,morning
+,Email triage,,red,work,morning
+,Set 30 minutes of personal time,,yellow,work,morning
