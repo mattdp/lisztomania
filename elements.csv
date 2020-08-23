@@ -1,12 +1,24 @@
 ﻿dummycol,name,detail,priority,category,timing
-,Did yesterday's routines?,Write down on a piece of displayed paper priority level and if did routines yesterday,red,life,morning
-,Gratitude (AM),1 minute of gratitude - soaring happiness at points - for my life,red,life,morning
+,Did yesterday's routines?,Write down on a piece of displayed paper priority level and if did routines yesterday,red,life,"1. morning"
+,Gratitude (AM),1 minute of gratitude - soaring happiness at points - for my life,red,life,"1. morning"
 ,Read five major goals,"Care a lot about the opinions of people I've deliberately selected by person and opinion area; care less about other opinions
 Be an excellent husband and father
 Build strong friendships
 Keep learning until I die
-Find meaningful work",yellow,life,morning
-,Review personal weekly goals,"For now, manually lookup. TODO - include",yellow,life,morning
-,Set personal daily goals,"One to three goals, added to life todos today",yellow,life,morning
-,Email triage,,red,work,morning
-,Set 30 minutes of personal time,,yellow,work,morning
+Find meaningful work",yellow,life,"1. morning"
+,Review personal weekly goals,"For now, manually lookup. TODO - include",yellow,life,"1. morning"
+,Set personal daily goals,"One to three goals, added to life todos today",yellow,life,"1. morning"
+,If Janie has Kenzo tomorrow estimate arrival time to her,,red,life,"1. morning"
+,Email triage,,red,work,"1. morning"
+,Set 30 minutes of focused life work time,,yellow,life,"1. morning"
+,Set 30 minutes of prospecting time,,green,work,"1. morning"
+,Exercise: do 10 pushups and 25 air squats,"Only applies if no bike up the hill or run at least a mile today",red,life,"2. afternoon"
+,Gratitude (PM),1 minute of gratitude - soaring happiness at points - for my life,red,life,"3. evening"
+,Floss,,red,life,"3. evening"
+,Journaling,,red,life,"3. evening"
+,Journal visualizations,"Each entry from last 2 days, one random entry from past",yellow,life,"3. evening"
+,Lay out clothing for tomorrow,,yellow,life,"3. evening"
+,Set a time to go to sleep,"Either absolute (no kenzo) or relative (+20m from unknown time bed entry)",red,life,"3. evening"
+,Turn off living room heater,,red,life,"3. evening"
+,Prep Kenzo night bottle - including 5 drop vit D if not earlier,,red,life,"3. evening"
+,Tomorrow's goals,"Review weekly goals and set daily goals for tomorrow",green,life,"3. evening"

@@ -2,14 +2,25 @@
 
 import csv
 import sys, getopt
+import random
 
-def emacsify(rows):
+#assuming need ** prefix to paste into bigger file right now
+def emacsify(rows,star_prefix = 2):
+
 	output_text = ''
 
-	for row in rows:
-		output_text += f'* {row["name"]}\n'
-		if row["detail"] != '':
-			output_text += f'{row["detail"]}\n'
+	categories = ["1. morning", "2. afternoon", "3. evening"]
+	for category in categories:
+		for i in range(star_prefix):
+			output_text += "*"
+		output_text += f" {category}\n"
+		for row in rows:
+			if row["timing"] == category:
+				for i in range(star_prefix+1):
+					output_text += "*"
+				output_text += f' {row["name"]}\n'
+				if row["detail"] != '':
+					output_text += f'{row["detail"]}\n'
 
 	return output_text
 
@@ -37,7 +48,7 @@ def parse_cli(argv):
 #return T or F
 #lets things through unless reason to remove
 def row_test(row, arguments):
-	debug = True
+	debug = False
 	if debug:
 		print(f'row: {row}')
 		print(f'args: {arguments}')
@@ -56,18 +67,36 @@ def row_test(row, arguments):
 def main(argv):
 
 	arguments = parse_cli(argv)
+	debug = False
+	formatted_output = ''
 
 	csv_reader = ''
-	selected_rows = []
-
-	with open('./elements.csv') as csv_file:
+	quote_rows = []
+	with open('/Users/mattdupont/repos/liztomania/quotes.csv') as csv_file:
 		csv_reader = csv.DictReader(csv_file, delimiter=',')
 		for row in csv_reader:
-			if row_test(row, arguments) == True:
-				selected_rows.append(row)
+			quote_rows.append(row)
 
-	formatted_output = emacsify(selected_rows)
-	print(formatted_output)
+	quote_count = len(quote_rows)
+	selections = 2
+
+	for i in range(0,selections):
+		selection_index = random.randint(0,quote_count-1)
+		quote_row = quote_rows[selection_index]
+		formatted_output += f'"{quote_row["Quote"]}" -{quote_row["Attribution"]}\n'
+
+	csv_reader = ''
+	action_rows_selected = []
+
+	with open('/Users/mattdupont/repos/liztomania/elements.csv') as csv_file:
+		csv_reader = csv.DictReader(csv_file, delimiter=',')
+		for row in csv_reader:
+			if row_test(row, arguments):
+				action_rows_selected.append(row)
+
+	formatted_output += emacsify(action_rows_selected)
+	if debug:
+		print(formatted_output)
 
 	with open('./todays_routine.org', 'w') as file:
 		file.write(formatted_output)

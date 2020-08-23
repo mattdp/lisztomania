@@ -1,22 +1,19 @@
+* goal: simple command makes routine todo list for the day
 * todo
+** hit button and right file, linked to emacs, gets refresh. could rename existing file for 1 archive. routines should be in one file instead of broken into 2
+* additional features
+** confirmed
+** icebox
+*** quote and goal randomizers as part of what's produced 
+*** eventual not just "life" and "work" but other projects
+** brainstorm - unsorted
+* archive
+** DONE morning/afternoon/evening classification
+** DONE in-code arg for how many * at base
 ** DONE add enough to CSV that it can be tested
 ** DONE uptake CSV into hashes in python
 ** DONE output the whole thing, in emacs format, to terminal
 ** DONE output to a saved file that overwrites
 ** DONE CLI input, but no output changes, for 1) life or life+work 2) priority
-** Output changes in results using CLI
-** MVP? outfit for AM routine and use for 3 days
-* goals
-** confirmed
-*** simple command makes routine todo list for the day
-** brainstorm
-* features
-** confirmed
-*** CSV format for name/detail/priority/category (internal)
-*** red/yellow/green input, so matches panic level of day
-*** workday vs. nonworkday
-*** scriptable command to generate list in emacs format
-** icebox
-*** quote and goal randomizers as part of what's produced 
-*** eventual not just "life" and "work" but other projects
-** brainstorm
+** DONE Output changes in results using CLI
+** DONE outfit for AM routine and use for 3 days
