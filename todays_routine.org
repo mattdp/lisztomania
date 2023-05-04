@@ -1,5 +1,5 @@
-"Investing in yourself is the most important investment you'll ever make in your life...there's no financial investment that'll ever match it, because if you develop more skill, more ability, more insight, more capacity, that's what's really going to provide economic freedom." -Warren Buffet
-"Your body is designed for success in the past. It is an antique biological machine that evolved in response to a world that no longer exists." -Zimbardo
+"What you do is more important than how [much] you do everything else, and doing something well does not make it important." -Tim Ferriss
+"If life-transforming missions could be found with just a little navel-gazing and an optimistic attitude, changing the world would be commonplace." -Cal Newport
 ** 1. morning
 *** Did yesterday's routines?
 Write down on a piece of displayed paper priority level and if did routines yesterday
@@ -16,7 +16,9 @@ For now, manually lookup. TODO - include
 *** Set personal daily goals
 One to three goals, added to life todos today
 *** If Janie has Kenzo tomorrow estimate arrival time to her
+*** Email triage
 *** Set 30 minutes of focused life work time
+*** Set 30 minutes of prospecting time
 ** 2. afternoon
 *** Exercise: do 10 pushups and 25 air squats
 Only applies if no bike up the hill or run at least a mile today

@@ -72,7 +72,7 @@ def main(argv):
 
 	csv_reader = ''
 	quote_rows = []
-	with open('/Users/mattdupont/repos/liztomania/quotes.csv') as csv_file:
+	with open('./quotes.csv') as csv_file:
 		csv_reader = csv.DictReader(csv_file, delimiter=',')
 		for row in csv_reader:
 			quote_rows.append(row)
@@ -80,6 +80,7 @@ def main(argv):
 	quote_count = len(quote_rows)
 	selections = 2
 
+	# can currently select the same quote multiple times/day
 	for i in range(0,selections):
 		selection_index = random.randint(0,quote_count-1)
 		quote_row = quote_rows[selection_index]
@@ -88,7 +89,7 @@ def main(argv):
 	csv_reader = ''
 	action_rows_selected = []
 
-	with open('/Users/mattdupont/repos/liztomania/elements.csv') as csv_file:
+	with open('./elements.csv') as csv_file:
 		csv_reader = csv.DictReader(csv_file, delimiter=',')
 		for row in csv_reader:
 			if row_test(row, arguments):
