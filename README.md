@@ -2,7 +2,8 @@
 
 Use a simple command to generate a to-do list of routines for the day, which:
 * is pastable into emacs
-* allows me to do only the essentials on busy days, with a more expansive routine when I have more time.
+* allows me to do only the essentials on busy days, with a more expansive routine when I have more time
+* incorporates randomness to keep things interesting
 
 ## How to use
 
