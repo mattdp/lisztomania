@@ -3,10 +3,13 @@
 import csv
 import sys, getopt
 import random
+import os
 
 elements_path = './sample_inputs/elements.csv' #where are input elements for the todo lists
 quotes_path = './sample_inputs/quotes.csv' #where are input quotes for the todo lists
-write_path = './todays_routine.org' #where to write the output
+write_path_default_value = './todays_routine.org' #where to write the output, if it's not specified in an env variable
+
+write_path = os.getenv('LIZTOMANIA_WRITE_PATH',write_path_default_value)
 
 #assuming need ** prefix to paste into bigger file right now
 def emacsify(rows,star_prefix = 2):
