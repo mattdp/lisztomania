@@ -4,6 +4,10 @@ import csv
 import sys, getopt
 import random
 
+elements_path = './sample_inputs/elements.csv' #where are input elements for the todo lists
+quotes_path = './sample_inputs/quotes.csv' #where are input quotes for the todo lists
+write_path = './todays_routine.org' #where to write the output
+
 #assuming need ** prefix to paste into bigger file right now
 def emacsify(rows,star_prefix = 2):
 
@@ -72,7 +76,7 @@ def main(argv):
 
 	csv_reader = ''
 	quote_rows = []
-	with open('./quotes.csv') as csv_file:
+	with open(quotes_path) as csv_file:
 		csv_reader = csv.DictReader(csv_file, delimiter=',')
 		for row in csv_reader:
 			quote_rows.append(row)
@@ -89,7 +93,7 @@ def main(argv):
 	csv_reader = ''
 	action_rows_selected = []
 
-	with open('./elements.csv') as csv_file:
+	with open(elements_path) as csv_file:
 		csv_reader = csv.DictReader(csv_file, delimiter=',')
 		for row in csv_reader:
 			if row_test(row, arguments):
@@ -99,7 +103,7 @@ def main(argv):
 	if debug:
 		print(formatted_output)
 
-	with open('./todays_routine.org', 'w') as file:
+	with open(write_path, 'w') as file:
 		file.write(formatted_output)
 
 # needed to actually run the program
