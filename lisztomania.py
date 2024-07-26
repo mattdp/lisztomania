@@ -5,7 +5,6 @@ import os
 
 """
 TODO: tag-based screening
-TODO: If an upper-depth Task is screened out, all lower-depth Tasks and notes are screened out also
 TODO: probability and randomness, likely TaskSet where none or some tasks picked
 TODO: exercise, personal time removed - put in personal CL
 """
@@ -91,7 +90,33 @@ def instructions_list():
         Task(title="Key items: tag 2-3 most important work todos today", note= "Take a few moments to understand why you care about these things and what makes them important"),
         Task(title="Improvement: select what aiming to improve today with [#A] tag"),
         "DEPTH_DEFAULT",
-        Task(title="Daily workflow TODO")
+        Task(title="Daily workflow"),
+        "DEPTH_DOWN",        
+        Task(title="Prep meetings that'll happen before deep work done"),
+        Task(title="On call?"),
+        "DEPTH_DOWN",        
+        Task(title="If on call, turn on #livechat and respond to today's leads"),        
+        Task(title="Hubspot Live Chats"),
+        Task(title="Hubspot contact forms", note="https://app.hubspot.com/submissions/8863617/form/e194656e-6583-4896-a134-37e608428d0e/submissions/?redirectUrl=https%3A%2F%2Fapp.hubspot.com%2Fforms%2F8863617"),
+        Task(title="sales@ emails"),
+        "DEPTH_UP",           
+        Task(title="Deep work on main goals for day"),
+        Task(title="'1 few hours' email"),
+        Task(title="Prep later meetings for today"),
+        Task(title="Tier 0 GTD"),
+        Task(title="SSS give 5 tacos and post my progress"),
+        Task(title="15 minutes impactful prospecting"),
+        Task(title="'2 within BD' email"),
+        Task(title="Tier 1 GTD"),
+        Task(title="Full pomodoro of personal or sales learning", note="https://keep.google.com/"),
+        Task(title="Email remind people of convos in 2 biz days, if not a recent booking"),
+        Task(title="Prep tomorrow's meetings"),
+        Task(title="Full pomodoro of personal admin/todos", note="https://keep.google.com/"),
+        Task(title="15 more minutes prospecting"),
+        Task(title="Tier 2 GTD"),
+        Task(title="Prep tomorrow's meetings"),
+        Task(title="Prospect at least 1 hour"),
+        Task(title="Tier 3 + 4 GTD"),
     ]
     return instructions
 
