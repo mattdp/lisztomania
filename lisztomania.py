@@ -5,11 +5,12 @@ import os
 
 """
 TODO: tag-based screening
+TODO: break out instructions into another file  
 TODO: probability and randomness, likely TaskSet where none or some tasks picked
 TODO: exercise, personal time removed - put in personal CL
 """
 
-write_path_default_value = './todays_routine.org' #where to write the output, 
+write_path_default_value = './todays_routine.org' 
 write_path = os.getenv('LIZTOMANIA_WRITE_PATH',write_path_default_value)
 
 INSTRUCTION_COMMANDS = [
