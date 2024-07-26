@@ -5,6 +5,8 @@ import os
 
 """
 TODO: tag-based screening
+    TODO: screen for a particular tag only
+    TODO: respect depth
 TODO: break out instructions into another file  
 TODO: probability and randomness, likely TaskSet where none or some tasks picked
 TODO: exercise, personal time removed - put in personal CL
@@ -91,7 +93,7 @@ def instructions_list():
         Task(title="Key items: tag 2-3 most important work todos today", note= "Take a few moments to understand why you care about these things and what makes them important"),
         Task(title="Improvement: select what aiming to improve today with [#A] tag"),
         "DEPTH_DEFAULT",
-        Task(title="Daily workflow"),
+        Task(title="Daily workflow", tags=["work"]),
         "DEPTH_DOWN",        
         Task(title="Prep meetings that'll happen before deep work done"),
         Task(title="On call?"),
@@ -129,6 +131,9 @@ def main():
     current_depth = default_depth
     instructions = instructions_list()
 
+    screened_out_tags = ["work","dennis"]
+    required_tags = []
+
     for i in instructions:
         if i == "DEPTH_DOWN":
             current_depth += 1
@@ -136,7 +141,12 @@ def main():
             current_depth -= 1
         elif i == "DEPTH_DEFAULT":
             current_depth = default_depth
-        else:
+        else: #it's a task
+            if i.tags: 
+                tag_set = set(i.tags)
+                if screened_out_tags and tag_set.intersection(screened_out_tags):
+                    continue #if any screened out tags present, skip this element
+
             formatted_output += "*"*current_depth + " " + i.title
             if i.note:
                 formatted_output += "\n"+i.note
