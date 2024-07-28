@@ -12,7 +12,9 @@ from instructions import Instructions
 TODO: tag-based screening
     TODO: screen for a particular tag only
     TODO: respect depth - should probably carry upper layer's tags with a task so they can be nested
-        IDEAS: inherited_tags, carries tag name and depth, can have dupes + that's OK, as rise to a depth discard tags of lower layers
+        DONE: change on depth
+        TODO: add tags as encounter Tasks
+        TODO: check present and higher level tags as go along
 TODO: probability and randomness, likely TaskSet where none or some tasks picked
 TODO: exercise, personal time removed - put in personal CL
 """
@@ -30,6 +32,8 @@ def main():
     debug = True    
     default_depth = 1 #how many "*" to append to a top-level task
     formatted_output = ''
+    accrued_tags = {}
+    accrued_tags[1] = []
     
     current_depth = default_depth
     instructions = Instructions.instructions_list()
@@ -40,12 +44,17 @@ def main():
     for i in instructions:
         if i == "DEPTH_DOWN":
             current_depth += 1
+            if not(current_depth in accrued_tags):
+                accrued_tags[current_depth] = []
         elif i == "DEPTH_UP":
+            accrued_tags[current_depth] = [] 
             current_depth -= 1
         elif i == "DEPTH_DEFAULT":
+            for key in accrued_tags:
+                accrued_tags[key] = []
             current_depth = default_depth
         else: #it's a task
-            if i.tags: 
+            if i.tags:
                 tag_set = set(i.tags)
                 if screened_out_tags and tag_set.intersection(screened_out_tags):
                     continue #if any screened out tags present, skip this element
