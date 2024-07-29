@@ -9,14 +9,12 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'sample_inputs'))
 from instructions import Instructions
 
 """
-TODO: tag-based screening
-    TODO: screen for a particular tag only
-    TODO: respect depth - should probably carry upper layer's tags with a task so they can be nested
-        DONE: change on depth
-        TODO: add tags as encounter Tasks
-        TODO: check present and higher level tags as go along
+TODO: add some good personal tags to mix for a composite list
+TODO: use for a while
 TODO: probability and randomness, likely TaskSet where none or some tasks picked
+
 TODO: exercise, personal time removed - put in personal CL
+TODO: tag-based screening tests - tried simple cases, not confident of complex
 """
 
 write_path_default_value = './todays_routine.org' 
@@ -32,14 +30,15 @@ def main():
     debug = True    
     default_depth = 1 #how many "*" to append to a top-level task
     formatted_output = ''
-    accrued_tags = {}
+    accrued_tags = {} #storage by level of which tags apply
     accrued_tags[1] = []
+    applicable_tags = [] #at moment of evaluation, all tags from all layers applying to context
     
     current_depth = default_depth
     instructions = Instructions.instructions_list()
 
-    screened_out_tags = ["work"]
-    required_tags = [""]
+    screened_out_tags = []
+    required_tags = [] 
 
     for i in instructions:
         if i == "DEPTH_DOWN":
@@ -54,10 +53,21 @@ def main():
                 accrued_tags[key] = []
             current_depth = default_depth
         else: #it's a task
-            if i.tags:
-                tag_set = set(i.tags)
-                if screened_out_tags and tag_set.intersection(screened_out_tags):
+            accrued_tags[current_depth] = i.tags if i.tags else [] #tags thrown out each cycle unless they're at a higher level
+            if screened_out_tags or required_tags:
+                applicable_tags = []                    
+                for key in accrued_tags:
+                    values = accrued_tags[key]
+                    for value in values:
+                        applicable_tags.append(value)
+                applicable_tag_set = set(applicable_tags)
+
+                if screened_out_tags and applicable_tag_set.intersection(screened_out_tags):
                     continue #if any screened out tags present, skip this element
+                if required_tags:
+                    intersection = applicable_tag_set.intersection(required_tags)
+                    if not all(element in intersection for element in required_tags): #unless all required tags present
+                        continue
 
             formatted_output += "*"*current_depth + " " + i.title
             if i.note:
