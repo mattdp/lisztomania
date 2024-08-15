@@ -25,7 +25,7 @@ class Instructions:
             "DEPTH_DOWN",
             Task(title="Focus"),
             "DEPTH_DOWN",
-            Task(title="To achieve broader goals around being curious and living life well,you need to efficiently trade a limited amount of your time for a high amount of money."),
+            Task(title="To achieve broader goals around being curious and living life well, you need to efficiently trade a limited amount of your time for a high amount of money."),
             Task(title="Rigorously prioritize which deals matter and hold yourself to a high standard on those deals. Qualify out mediocre deals rather than nurse them along"),
             Task(title="'Turn on' work and operate intensely when working, and 'turn off' work and don't let it dominate your mind when not working."),
             "DEPTH_UP",
