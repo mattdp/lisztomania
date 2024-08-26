@@ -1,16 +1,16 @@
+import random
+
 class Quotes:
 
     # not sure what output format helps most yet
     def get_quotes(quantity):
         quotes = Quotes.quotes_list()
-        length = len(quotes)
 
-        #TODO get X nonoverlapping random integers. for continuity assuming q = 2
-        rands = [4,11]
+        indices = random.sample(range(len(quotes)), quantity)
 
         result = []
-        for q in range(0,quantity):
-            result.append(quotes[rands[q]])
+        for q in range(quantity):
+            result.append(quotes[indices[q]])
         return result
 
     def quotes_list():
