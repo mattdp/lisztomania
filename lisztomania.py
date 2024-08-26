@@ -7,6 +7,7 @@ from task import Task
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), 'sample_inputs'))
 from instructions import Instructions
+from quotes import Quotes
 
 """
 TODO: add some good personal tags to mix for a composite list
@@ -36,9 +37,13 @@ def main():
     
     current_depth = default_depth
     instructions = Instructions.instructions_list()
+    quotes = Quotes.get_quotes(2)
 
     screened_out_tags = []
     required_tags = [] 
+
+    for q in range(0,len(quotes)):
+        formatted_output += "\""+quotes[q][0]+"\" -"+quotes[q][1]+"\n"
 
     for i in instructions:
         if i == "DEPTH_DOWN":
